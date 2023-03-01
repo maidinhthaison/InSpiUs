@@ -1,0 +1,25 @@
+<resources>
+
+    <string name="text_btn_download">Download</string>
+    <string name="share_feedback">Share feedback</string>
+
+    <string name="teams_menu_label">Teams</string>
+    <string name="match_menu_label">Matches</string>
+    <string name="viewmore_menu_label">More</string>
+
+    <!--Notification-->
+    <string name="channel_name">InspiUs</string>
+    <string name="channel_desc">Downloading file: %1$s</string>
+    <string name="channel_id">channel_100</string>
+
+    <string name="processing">Processing</string>
+    <string name="please_wait">Please wait...</string>
+
+    <!--Drawer menu-->
+    <string name="setting">Setting</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

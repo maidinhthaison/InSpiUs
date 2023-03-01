@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/teams_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_48"
+        android:title="@string/teams_menu_label"/>
+    <item
+        android:id="@+id/matches_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_portfolio_48"
+        android:title="@string/match_menu_label"/>
+    <item
+        android:id="@+id/more_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_more_48"
+        android:title="@string/viewmore_menu_label"/>
+</menu>

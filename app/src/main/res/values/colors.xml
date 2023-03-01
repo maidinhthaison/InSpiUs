@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--   color for the app bar and other primary UI elements -->
+    <color name="colorPrimary">#3F51B5</color>
+
+    <!--   a darker variant of the primary color, used for
+           the status bar (on Android 5.0+) and contextual app bars -->
+    <color name="colorPrimaryDark">#303F9F</color>
+
+    <!--   a secondary color for controls like checkboxes and text fields -->
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="lightgray">#EEEEEE</color>
+    <color name="gray">#555555</color>
+    <color name="transparent">#00000000</color>
+    <color name="geyser">#DAE2E6</color>
+    <color name="lochmara">#0087CB</color>
+
+
+    <color name="divider_color">#CCCCCC</color>
+    <color name="gray_bg">#F5F5F5</color>
+
+
+    <color name="text_color">#333333</color>
+    <color name="hint_text_color">#999999</color>
+    <color name="edt_error_bg">#16FF001F</color>
+    <color name="error_text">#FF001F</color>
+
+
+    <color name="silver">#CCCCCC</color>
+    <color name="wild_sand">#F5F5F5</color>
+    <color name="alto">#D8D8D8</color>
+    <color name="buttercup">#F5A623</color>
+    <color name="buttercup_trans_20">#33F5A623</color>
+    <color name="boston_blue">#4493BD</color>
+    <color name="boston_blue_trans_50">#804493BD</color>
+    <color name="mine_shaft">#333333</color>
+    <color name="azure_radiance">#0089FF</color>
+    <color name="viking">#6EB6DB</color>
+    <color name="dark_charcoal">#333333</color>
+    <color name="dove_gray">#666666</color>
+    <color name="dove_gray_trans_20">#66666633</color>
+    <color name="steel_blue">#478EB3</color>
+    <color name="fountain_blue">#5C9CBD</color>
+
+    <color name="ecstasy">#F57823</color>
+    <color name="tundora">#444444</color>
+
+    <color name="dusty_gray">#999999</color>
+    <color name="dusty_gray_30">#4D999999</color>
+    <color name="alto_light">#DDDDDD</color>
+    <color name="dark_alto">#E0E0E0</color>
+    <color name="alto_2">#E0E0E0</color>
+    <color name="macaroni_and_cheese">#FECB79</color>
+    <color name="cornflower_blue">#6195ED</color>
+    <color name="catskill_white">#E6E9F2</color>
+    <color name="black_trans_80">#80000000</color>
+</resources>

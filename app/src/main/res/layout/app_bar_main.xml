@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.LittleLives.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?android:attr/windowBackground"
+            app:titleTextAppearance="@style/LittleLivesToolbarTitleAppearance"
+            app:subtitleTextAppearance="@style/LittleLivesSubtitleAppearance"
+            app:popupTheme="@style/Theme.LittleLives.PopupOverlay">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imvProfile"
+                android:layout_width="@dimen/_24dp"
+                android:layout_height="@dimen/_24dp"
+                android:src="@drawable/ic_account_circle_48"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:gravity="center"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:paddingStart="@dimen/_12dp"
+                    android:paddingEnd="@dimen/_12dp"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_12sp"
+                    android:background="@drawable/bg_btn_rounded_transparent"
+                    android:id="@+id/btnShareFeedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_32dp"
+                    android:layout_gravity="center"
+                    android:text="@string/share_feedback"
+                    android:textColor="@color/dusty_gray"
+                    android:src="@drawable/ic_account_circle_48"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:id="@+id/imvGridview"
+                    app:srcCompat="@drawable/ic_grid_view_24"
+                    android:layout_width="@dimen/_24dp"
+                    android:layout_height="@dimen/_24dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
