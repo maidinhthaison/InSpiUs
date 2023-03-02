@@ -4,7 +4,7 @@ import data.Result
 import java.io.IOException
 
 abstract class BaseRemoteDataSource {
-    //Base class was used to implement calling restful api (if have)
+    //Base class was used to implement calling restful api
     protected suspend fun <T> getResult(call: suspend () -> T): Result<T> {
         try {
             val response = call()

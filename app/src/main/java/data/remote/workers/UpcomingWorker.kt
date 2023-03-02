@@ -24,9 +24,8 @@ class UpcomingWorker(
 
         val title = workerParameters.inputData.getString(KEY_INPUT_NOTIFY_UPCOMING_MATCH_TITLE)
         val content = workerParameters.inputData.getString(KEY_INPUT_NOTIFY_UPCOMING_MATCH_MESSAGE)
-        val millisecond = workerParameters.inputData.getLong(KEY_INPUT_NOTIFY_UPCOMING_MATCH_MILLS, UPCOMING_TIME_IN_MILLIS_DEFAULT) //1 hour
         try {
-            displayNotification(title, content, millisecond)
+            displayNotification(title, content)
             notificationManager.cancel(context.resources.getInteger(R.integer.notificationID))
             val outPutData = Data.Builder()
                 .putString(KEY_OUTPUT_NOTIFY_UPCOMING_MATCH_MESSAGE, content)
@@ -45,7 +44,7 @@ class UpcomingWorker(
         return Result.failure()
     }
 
-    private fun displayNotification(title: String?, content: String?, milliseconds: Long?) {
+    private fun displayNotification(title: String?, content: String?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 context.getString(R.string.channel_upcoming_id),

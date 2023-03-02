@@ -49,7 +49,6 @@ data class Match(
         return sdf.format(parseMatchDate(date.toString(), MATCH_DATE_FORMAT_ORIGIN))
     }
     fun toUpcomingTime(): Long? {
-        val sdf = SimpleDateFormat(MATCH_DATE_FORMAT)
         val comingDate = parseMatchDate(date.toString(), MATCH_DATE_FORMAT_ORIGIN)
         return comingDate?.let { System.currentTimeMillis().minus(it.time) }
     }
