@@ -28,7 +28,8 @@ Timber for print log in console\
 Worker manager for schedule event (upcoming matches), reminder and download video hightlights\
 Mockito for testing\
 Exoplayer for playing video\
-**Improvement**
+## Improvement
 Unit test for viewModel\
-Tracking notifications: reminder task, upcoming task using FCM
-**Demo**
+Tracking notifications: reminder task, upcoming task using FCM\
+Custom exo player screen
+
