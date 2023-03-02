@@ -1,17 +1,20 @@
 package data.remote.api
 
+import data.response.MatchesResponse
 import data.response.TeamsResponse
-import data.response.DownloadResponse
-import retrofit2.http.GET
-import retrofit2.http.Streaming
-import retrofit2.http.Url
+import retrofit2.http.*
 
 interface ApiAppService {
 
     @GET("/teams")
     suspend fun callListTeams(): TeamsResponse
 
-    @Streaming
-    @GET
-    suspend fun downloadFileWithUrl(@Url fileUrl: String): DownloadResponse
+    @GET("/teams/matches")
+    suspend fun callListMatches(): MatchesResponse
+
+    @GET("/teams/{id}/matches")
+    suspend fun callGetMatchPerTeam(
+        @Path("id") id: String
+    ): MatchesResponse
+
 }

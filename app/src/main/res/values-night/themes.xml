@@ -9,15 +9,15 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.LittleLives.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.InspiUs.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="LittleLivesToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <style name="InspiUsToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">@dimen/_18dp</item>
     </style>
 
-    <style name="LittleLivesSubtitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+    <style name="InspiUsSubtitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
         <item name="android:textSize">@dimen/_14dp</item>
     </style>
 
-    <style name="Theme.LittleLives.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.InspiUs.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

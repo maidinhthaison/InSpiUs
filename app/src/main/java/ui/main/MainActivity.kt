@@ -15,14 +15,19 @@ import com.google.android.material.navigation.NavigationView
 import com.jetpack.demo.R
 import com.jetpack.demo.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import ui.matches.fragments.MatchesFragment
 import ui.teams.fragment.TeamsFragment
-import ui.portfolio.fragment.PortfolioFragment
 import utils.constant.replaceFragment
 import utils.constant.showToast
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    companion object{
+        const val TeamsFragmentTAG ="teams"
+        const val MatchFragmentTAG ="matches"
+    }
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
@@ -64,7 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     true
                 }
                 R.id.matches_menu_item -> {
-                    val fragment = PortfolioFragment.newInstance()
+                    val fragment = MatchesFragment.newInstance()
                     replaceFragment(fragment,R.id.mainContainer, MatchFragmentTAG)
                     binding.navView.setCheckedItem(R.id.nav_portfolio)
                     true
@@ -82,7 +87,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 else -> false
             }
         }
-
         val badgeMatch = bottomNavigationView.getOrCreateBadge(R.id.matches_menu_item)
         badgeMatch.isVisible = true
         badgeMatch.number = 10
@@ -90,7 +94,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val badgeMore = bottomNavigationView.getOrCreateBadge(R.id.more_menu_item)
         badgeMore.isVisible = true
 
-        // When we open the application first time the fragment should be shown to the user in this case it is news fragment
+        // When we open the application first time the fragment should be shown to the user in this case it is teams fragment
         val teamsFragment = TeamsFragment.newInstance()
         replaceFragment(teamsFragment,R.id.mainContainer, TeamsFragmentTAG)
 
@@ -130,7 +134,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.nav_portfolio -> {
-                fragment = PortfolioFragment.newInstance()
+                fragment = MatchesFragment.newInstance()
                 replaceFragment(fragment,R.id.mainContainer, MatchFragmentTAG)
                 bottomNavigationView.selectedItemId = R.id.matches_menu_item
 
@@ -155,8 +159,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         return true
     }
-    companion object{
-        const val TeamsFragmentTAG ="teams"
-        const val MatchFragmentTAG ="matches"
+
+    override fun onResume() {
+        super.onResume()
+
     }
+
 }

@@ -42,7 +42,7 @@ class TeamsViewModelTest {
     }
 
     @Test
-    fun getListCurrencyTest() {
+    fun getListTeamTest() {
         runBlocking {
             Mockito.`when`(teamsRepository.getTeamRepo())
                 .thenReturn(Result.Success<TeamsResponse>(TeamsResponse(listOf<Team>(Team("a", "b", "c",)))))

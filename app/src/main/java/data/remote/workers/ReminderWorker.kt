@@ -1,0 +1,71 @@
+package data.remote.workers
+
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.media.RingtoneManager
+import android.os.Build
+import androidx.core.app.NotificationCompat
+import androidx.work.Data
+import androidx.work.Worker
+import androidx.work.WorkerParameters
+import com.jetpack.demo.R
+import utils.constant.*
+
+class ReminderWorker(
+    private val context: Context,
+    private val workerParameters: WorkerParameters
+) : Worker(context, workerParameters) {
+
+    private val notificationManager =
+        applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+    override fun doWork(): Result {
+
+        val title = workerParameters.inputData.getString(KEY_INPUT_NOTIFY_REMINDER_MATCH_TITLE)
+        val content = workerParameters.inputData.getString(KEY_INPUT_NOTIFY_REMINDER_MATCH_MESSAGE)
+        try {
+            displayNotification(title, content)
+            notificationManager.cancel(context.resources.getInteger(R.integer.notificationID))
+            val outPutData = Data.Builder()
+                .putString(KEY_OUTPUT_NOTIFY_REMINDER_MATCH_MESSAGE, content)
+                .build()
+            Result.success(outPutData)
+        } catch (e: Exception) {
+            val outPutData = Data.Builder()
+                .putString(
+                    KEY_OUTPUT_NOTIFY_REMINDER_MATCH_MESSAGE,
+                    "Causing Exception : ${e.localizedMessage}"
+                )
+                .build()
+            Result.failure(outPutData)
+        }
+
+        return Result.failure()
+    }
+
+    private fun displayNotification(title: String?, content: String?) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                context.getString(R.string.channel_reminder_id),
+                title,
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+            channel.enableVibration(false)
+            notificationManager.createNotificationChannel(channel)
+        }
+        val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        val notificationBuilder =
+            NotificationCompat.Builder(context, context.getString(R.string.channel_reminder_id))
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(title)
+                .setContentText(content)
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri)
+                .setStyle(NotificationCompat.BigTextStyle().bigText(content))
+        notificationManager.notify(
+            context.resources.getInteger(R.integer.notification_reminder_id),
+            notificationBuilder.build()
+        )
+    }
+}

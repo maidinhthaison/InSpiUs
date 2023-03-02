@@ -2,4 +2,6 @@
 <resources>
     <integer name="rounded_image_radius">20</integer>
     <integer name="notificationID">100</integer>
+    <integer name="notification_upcoming_id">200</integer>
+    <integer name="notification_reminder_id">300</integer>
 </resources>

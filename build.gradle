@@ -54,9 +54,10 @@ task convertDimens() {
     def xmlFile720 = "${project.rootDir}/app/src/main/res/values-sw720dp/dimens.xml"
     def xmlFile800 = "${project.rootDir}/app/src/main/res/values-sw800dp/dimens.xml"
 
-    def xmlOriginal = new XmlParser().parse(xmlFile360)
+    def xmlOriginal = new XmlParser().parse(xmlFileDefault)
 
     def xmlDefault = xmlOriginal.clone()
+    def xml360 = xmlOriginal.clone()
     def xml480 = xmlOriginal.clone()
     def xml540 = xmlOriginal.clone()
     def xml600 = xmlOriginal.clone()
@@ -68,15 +69,15 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((320 / 360 * newValue).toFloat(), 2)
+            newValue = round((320 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((320 / 360 * newValue).toFloat(), 2)
+            newValue = round((320 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((320 / 360 * newValue).toFloat(), 2)
+            newValue = round((320 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
@@ -85,15 +86,15 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((480 / 360 * newValue).toFloat(), 2)
+            newValue = round((480 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((480 / 360 * newValue).toFloat(), 2)
+            newValue = round((480 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((480 / 360 * newValue).toFloat(), 2)
+            newValue = round((480 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
@@ -101,15 +102,15 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((540 / 360 * newValue).toFloat(), 2)
+            newValue = round((540 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((540 / 360 * newValue).toFloat(), 2)
+            newValue = round((540 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((540 / 360 * newValue).toFloat(), 2)
+            newValue = round((540 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
@@ -117,15 +118,15 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((600 / 360 * newValue).toFloat(), 2)
+            newValue = round((600 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((600 / 360 * newValue).toFloat(), 2)
+            newValue = round((600 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((600 / 360 * newValue).toFloat(), 2)
+            newValue = round((600 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
@@ -133,15 +134,15 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((640 / 360 * newValue).toFloat(), 2)
+            newValue = round((640 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((640 / 360 * newValue).toFloat(), 2)
+            newValue = round((640 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((640 / 360 * newValue).toFloat(), 2)
+            newValue = round((640 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
@@ -149,15 +150,15 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((720 / 360 * newValue).toFloat(), 2)
+            newValue = round((720 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((720 / 360 * newValue).toFloat(), 2)
+            newValue = round((720 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((720 / 360 * newValue).toFloat(), 2)
+            newValue = round((720 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
@@ -165,20 +166,21 @@ task convertDimens() {
         def value = dimen.text()
         if (value.contains("sp")) {
             def newValue = value.replace("sp", "").toFloat()
-            newValue = round((800 / 360 * newValue).toFloat(), 2)
+            newValue = round((800 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "sp"
         } else if (value.contains("px")) {
             def newValue = value.replace("px", "").toFloat()
-            newValue = round((800 / 360 * newValue).toFloat(), 2)
+            newValue = round((800 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "px"
         } else {
             def newValue = value.replace("dp", "").toFloat()
-            newValue = round((800 / 360 * newValue).toFloat(), 2)
+            newValue = round((800 / 320 * newValue).toFloat(), 2)
             dimen.value = newValue + "dp"
         }
     }
 
     new XmlNodePrinter(new PrintWriter(new FileWriter(xmlFileDefault))).print(xmlDefault)
+    new XmlNodePrinter(new PrintWriter(new FileWriter(xmlFile360))).print(xml360)
     new XmlNodePrinter(new PrintWriter(new FileWriter(xmlFile480))).print(xml480)
     new XmlNodePrinter(new PrintWriter(new FileWriter(xmlFile540))).print(xml540)
     new XmlNodePrinter(new PrintWriter(new FileWriter(xmlFile600))).print(xml600)

@@ -29,7 +29,7 @@ class DownloadFileWorker(
 
     override fun doWork(): Result {
         val mimeType = when (workerParameters.inputData.getString(KEY_INPUT_FILE_TYPE)) {
-            "pdf" -> "application/pdf"
+            "mp4" -> "application/mp4"
             else -> ""
         }
         val filename = workerParameters.inputData.getString(KEY_INPUT_FILE_NAME)
@@ -68,12 +68,12 @@ class DownloadFileWorker(
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder =
             NotificationCompat.Builder(context, context.getString(R.string.channel_id))
-                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(context.getString(R.string.channel_name))
                 .setContentText(String.format(context.getString(R.string.channel_desc), filename))
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
-        notificationManager . notify (context.resources.getInteger(R.integer.notificationID), notificationBuilder.build())
+        notificationManager.notify (context.resources.getInteger(R.integer.notificationID), notificationBuilder.build())
     }
 
 

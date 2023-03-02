@@ -1,4 +1,4 @@
-package data.local
+package data.local.datastore
 
 import androidx.datastore.preferences.core.preferencesKey
 val deviceUUID = preferencesKey<String>("device-uuid")

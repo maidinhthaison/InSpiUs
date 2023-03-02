@@ -5,7 +5,7 @@ import android.widget.Toast
 import java.text.SimpleDateFormat
 import java.util.*
 
-fun parseEventDate(inputDate: String, format: String): Date? {
+fun parseMatchDate(inputDate: String, format: String): Date? {
     val sdf = SimpleDateFormat(format)
     return sdf.parse(inputDate)
 }

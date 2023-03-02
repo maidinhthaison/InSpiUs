@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="@dimen/_10dp"
+    android:layout_height="@dimen/_150dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="2022-04-23T18:00:00.000Z"
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sp" />
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10dp"
+        tools:text="Team Cool Eagles vs. Team Red Dragons"
+        android:id="@+id/tv_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_14sp" />
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/tv_des"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10dp"
+        tools:text="Team Red Dragons"
+        android:id="@+id/tv_winner"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_14sp" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/bg_btn_rounded"
+        app:layout_constraintTop_toBottomOf="@+id/tv_winner"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10dp"
+        tools:text="Hightlights"
+        android:text="Hightlights"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:id="@+id/btnViewHighlight"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40dp"
+        android:textSize="@dimen/_14sp" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/bg_btn_rounded"
+        app:layout_constraintTop_toBottomOf="@+id/tv_winner"
+        app:layout_constraintStart_toEndOf="@+id/btnViewHighlight"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_10dp"
+        tools:text="Set reminder"
+        android:text="Set reminder"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:id="@+id/btnSetReminder"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40dp"
+        android:textSize="@dimen/_14sp" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/ic_download_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_10dp"
+        android:gravity="center"
+        android:id="@+id/btnDownload"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

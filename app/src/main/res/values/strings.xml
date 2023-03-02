@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="text_btn_download">Download</string>
@@ -11,6 +12,12 @@
     <string name="channel_name">InspiUs</string>
     <string name="channel_desc">Downloading file: %1$s</string>
     <string name="channel_id">channel_100</string>
+
+    <string name="channel_upcoming_match">Upcoming Match</string>
+    <string name="channel_upcoming_id">channel_200</string>
+
+    <string name="channel_reminder_match">Reminder Match</string>
+    <string name="channel_reminder_id">channel_300</string>
 
     <string name="processing">Processing</string>
     <string name="please_wait">Please wait...</string>

@@ -15,7 +15,7 @@ import data.response.Team
 import di.GlideUtils
 
 
-internal class TeamsAdapter (private var context: Context)
+internal class TeamsAdapter (private var context: Context, private var itemClickListener: ItemClickListener)
     : ListAdapter<Team, TeamsAdapter.TeamViewHolder>(DIFF_CALLBACK) {
     @NonNull
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
@@ -37,6 +37,9 @@ internal class TeamsAdapter (private var context: Context)
         fun bind(item: Team) {
             tvName.text = "${item.name}"
             GlideUtils().loadImage(context, item.logo, ivIcon)
+            this.itemView.setOnClickListener {
+                itemClickListener.onItemClick(item.id.toString())
+            }
         }
     }
 
@@ -57,5 +60,9 @@ internal class TeamsAdapter (private var context: Context)
                 return oldItem == newItem
             }
         }
+    }
+
+    internal interface ItemClickListener {
+        fun onItemClick(id: String)
     }
 }

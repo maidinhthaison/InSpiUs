@@ -19,7 +19,7 @@ android {
     defaultConfig {
         applicationId "com.jetpack.demo"
         minSdkVersion project.minSdkVersion
-        targetSdkVersion  project.compileSdkVersion
+        targetSdkVersion project.compileSdkVersion
         versionCode project.versionCode
         versionName project.versionName
 
@@ -33,7 +33,7 @@ android {
                 keyAlias 'mykeystore'
                 storeFile file('../my_keystore.jks')
             }
-            debug{
+            debug {
 
             }
         }
@@ -76,15 +76,15 @@ android {
             dimension = "environment"
             versionNameSuffix = "dev"
             applicationIdSuffix = ".dev"
-            manifestPlaceholders = [applicationName: "Little Lives Dev"]
-            resValue "string", "app_name", "Little Lives Dev"
+            manifestPlaceholders = [applicationName: "InspiUs Dev"]
+            resValue "string", "app_name", "InspiUs Dev"
         }
 
         staging {
             dimension = "environment"
             versionNameSuffix = "staging"
             applicationIdSuffix = ".staging"
-            manifestPlaceholders = [applicationName: "InSpiUs Stg"]
+            manifestPlaceholders = [applicationName: "InspiUs Stg"]
             resValue "string", "app_name", "InSpiUs Stg"
         }
 
@@ -189,5 +189,10 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.mockito:mockito-inline:$mockito_version"
     androidTestImplementation "org.mockito:mockito-android:$mockito_android_version"
+
+    //Exo player
+    def exoplayer_version = "2.15.0"
+    implementation "com.google.android.exoplayer:exoplayer:$exoplayer_version"
+
 
 }

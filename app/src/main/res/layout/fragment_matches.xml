@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ui.main.MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/btnPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40dp"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@drawable/bg_btn_rounded_transparent"
+            android:text="Previous"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            tools:text="Previous">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/btnUpComing"
+
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40dp"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@drawable/bg_btn_rounded_transparent"
+            android:text="Upcoming"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            tools:text="Upcoming">
+
+        </androidx.appcompat.widget.AppCompatButton>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:name="main.MainApplication"
         android:allowBackup="true"
@@ -14,12 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetPackApplication"
         android:usesCleartextTraffic="true">
-        <!-- Remove WorkManager default initialization -->
+
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
             android:authorities="${applicationId}.workmanager-init"
             android:exported="false"
-            tools:node="remove" /> <!-- todo  remove usesCleartextTraffic for real -->
+            tools:node="remove" />
         <activity android:name="ui.main.MainActivity" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="ui.exoplayer.PlayingActivity"/>
     </application>
 
 </manifest>
