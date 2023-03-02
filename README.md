@@ -1,15 +1,15 @@
 # InSpiUs home assignment
 
-**How to approach**
-**I designed by my self"
+## How to approach
+I designed by my self
 ## Architecture
-Clean architecture : view,data,domain
-Advantages: separate layouts clearly, easy to maintenance, modern android development
+Clean architecture : view,data,domain\
+Advantages: separate layouts clearly, easy to maintenance, modern android development\
 ## Language
 Kotlin, Java
 ## Framework 
 Android native
-## IDE:
+## IDE
 Android Studio
 ## Environment
 Android SDK, Android Studio, Git,compileSdkVersion = 30, buildToolsVersion = 30.0.3
